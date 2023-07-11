@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ContactRow from "./ContactRow";
+import { useEffect } from "react";
 
 export default function ContactList() {
   const dummyContacts = [
@@ -8,7 +9,7 @@ export default function ContactList() {
     { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
   ];
   const [contacts, setContacts] = useState(dummyContacts);
-  console.log(dummyContacts);
+  // console.log(dummyContacts);
   return (
     <table>
       <thead>
@@ -31,3 +32,18 @@ export default function ContactList() {
     </table>
   );
 }
+useEffect(() => {
+  async function fetchContacts() {
+    try {
+      const response = await fetch(
+        "https://jsonplace-univclone.herokuapp.com/users"
+      );
+      const result = await response.json();
+      setContacts(result);
+      console.log(Contacts);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  fetchContacts();
+}, []);
