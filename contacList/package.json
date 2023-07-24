@@ -1,5 +1,5 @@
 {
-  "name": "contactlist",
+  "name": "contactpackage",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,14 +22,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "vite": "^4.4.0"
-  },
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "/package.json"
-      ],
-      "url": "https://json.schemastore.org/package",
-      "schema": true
-    }
-  ]
+  }
 }
