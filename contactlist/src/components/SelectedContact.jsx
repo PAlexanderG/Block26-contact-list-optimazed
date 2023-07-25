@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function SelectedContact({ setSelectedContactId, contact }) {
+export default function SelectedContact({ contact }) {
   //--- object deconstruction w props ---
   // function Button({count, setCount}) {
   //
@@ -15,12 +15,12 @@ export default function SelectedContact({ setSelectedContactId, contact }) {
   //   );
   // }
 
-  const [count, setSelectedContactId] = (useState = 0);
+  const [count, setSelectedContactId] = useState(0);
   return (
     <tr
-      onClick={() => {
-        setSelectedContactId(contact.id);
-      }}
+    onClick={() => {
+      setSelectedContactId(contact.id);
+    }}
     >
       <td>{contact.name}</td>
       <td>{contact.email}</td>
