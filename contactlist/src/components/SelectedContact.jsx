@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 export default function SelectedContact({ contact }) {
-  // basic functions or structor
-
   const [singleContact, setSingleContact] = useState(0);
+
+  // basic functions format: useEffect(()=>{},[])
   useEffect(() => {
     async function fetchSingleContacts() {
       try {
@@ -19,25 +19,25 @@ export default function SelectedContact({ contact }) {
     }
     fetchSingleContacts();
   }, []);
-  // console.log(singleContact);
-  //--- object deconstruction w props ---
-  // function button({ count, setCount }) {
-  //   return (
-  //     <button
-  //       onClick={() => {
-  //         setCount(count);
-  //       }}
-  //     >
-  //       {count}
-  //     </button>
-  //   );
-  // console.log(singleContact.company.name);
+
   const [count, setSelectedContactId] = useState(0);
   return (
-    <div>
-      <td>{singleContact.name}</td>
-      <td>{singleContact.phone}</td>
-      <td>{singleContact.email}</td>
-    </div>
+    <>
+      <div>
+        <h2>Contact Detail</h2>
+        <td>{singleContact.name}</td>
+        <td>{singleContact.phone}</td>
+        <td>{singleContact.username}</td>
+        <td>{singleContact.email}</td>
+      </div>
+      <div>
+        <h2>Address</h2>
+        <td>{singleContact.adress}</td>
+      </div>
+      <div>
+        <h2>Business Details</h2>
+        <td>{singleContact.business}</td>
+      </div>
+    </>
   );
 }

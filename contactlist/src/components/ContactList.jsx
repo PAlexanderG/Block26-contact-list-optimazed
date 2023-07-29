@@ -35,6 +35,7 @@ export default function ContactList({ setSelectedContactId }) {
         </tr>
       </thead>
       <tbody>
+        <h1></h1>
         <tr>
           <td>Name</td>
           <td>Email</td>
